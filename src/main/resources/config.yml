@@ -1,0 +1,21 @@
+#
+# ----------------------------------------
+# RS-ItemMagnet Configuration
+# ----------------------------------------
+#
+
+# Default scan radius for RS-ItemMagnet to scan for dropped items.
+default-radius: 10
+
+# Maximum radius players may set their RS-ItemMagnets to.
+# 0 = Unlimited.
+max-radius: 25
+
+# Seconds allowed to select a target Container.
+conversion-timeout: 30
+
+# Whether OP players bypass permissions checks
+admin-bypass: true
+
+# Enable debug logging.
+debug-mode: false

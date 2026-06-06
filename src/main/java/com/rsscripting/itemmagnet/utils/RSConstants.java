@@ -1,0 +1,83 @@
+package com.rsscripting.itemmagnet.utils;
+
+import org.bukkit.Material;
+
+public class RSConstants {
+
+    /*
+    |--------------------------------------------------------------------------
+    | PLUGIN INFO
+    |--------------------------------------------------------------------------
+    */
+
+    public static final String PLUGIN_NAME =
+            "RS-ItemMagnet";
+
+    public static final String PREFIX =
+            "§7[§cRS-ItemMagnet§7] §r";
+
+    public static final String COMMAND_ALIAS =
+            "rsitemmagnet";
+
+    /*
+    |--------------------------------------------------------------------------
+    | GITHUB
+    |--------------------------------------------------------------------------
+    */
+
+    public static final String GITHUB_USER =
+            "RS-Scripting";
+
+    public static final String GITHUB_REPOSITORY =
+            "RS-ItemMagnet";
+
+    /*
+    |--------------------------------------------------------------------------
+    | PERMISSIONS
+    |--------------------------------------------------------------------------
+    */
+
+    public static final String ADMIN_PERMISSION =
+            "rsitemmagnet.admin";
+
+    public static final String BYPASS_PERMISSION =
+            "rsitemmagnet.bypass";
+
+    /*
+    |--------------------------------------------------------------------------
+    | REQUIRED CONVERSION ITEMS
+    |--------------------------------------------------------------------------
+    */
+
+    public static final Material REQUIRED_HELD_ITEM =
+            Material.STICK;
+
+    /*
+    |--------------------------------------------------------------------------
+    | REQUIRED TARGET ENTITY
+    |--------------------------------------------------------------------------
+    */
+
+    public static final Material
+            REQUIRED_TARGET_BLOCK =
+            Material.LODESTONE;
+
+    /*
+    |--------------------------------------------------------------------------
+    | MENU SETTINGS
+    |--------------------------------------------------------------------------
+    */
+
+    public static final Material MENU_FILLER_MATERIAL =
+            Material.WHITE_STAINED_GLASS_PANE;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Version
+    |--------------------------------------------------------------------------
+    */
+
+    public static final String VERSION =
+            "1.0.0";
+
+}

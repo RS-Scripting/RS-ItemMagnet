@@ -1,0 +1,21 @@
+name: RS-ItemMagnet
+version: 1.0.0
+main: com.rsscripting.itemmagnet.RSItemMagnet
+api-version: '1.21'
+
+author: RSScripting
+description: RS Item magnet
+
+commands:
+  rsim:
+    description: Main plugin command
+    usage: /rsbt
+
+permissions:
+  rsim.admin:
+    description: Admin access
+    default: op
+
+  rsim.bypass:
+    description: Bypass ownership protection
+    default: op
