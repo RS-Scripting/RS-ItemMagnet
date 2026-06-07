@@ -38,11 +38,11 @@ public class GitHubUpdateChecker {
                     try {
 
                         String apiURL =
-                                "https://api.github.com/repos/"
+                                "https://raw.githubusercontent.com/"
                                         + RSConstants.GITHUB_USER
                                         + "/"
                                         + RSConstants.GITHUB_REPOSITORY
-                                        + "/releases/latest";
+                                        + "/master/pom.xml";
 
                         HttpURLConnection connection =
                                 (HttpURLConnection)
@@ -72,12 +72,13 @@ public class GitHubUpdateChecker {
 
                         reader.close();
 
-                        String json =
+                        String pom =
                                 response.toString();
 
                         latestVersion =
-                                json.split("\"tag_name\":\"")[1]
-                                        .split("\"")[0];
+                                pom.split("<version>")[1]
+                                        .split("</version>")[0]
+                                        .trim();
 
                         String currentVersion =
                                 VersionUtils.getVersion();
