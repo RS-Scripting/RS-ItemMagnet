@@ -81,7 +81,9 @@ public class RSAdminListener
         if (event.getRawSlot() == 4) {
 
             Block block =
-                    conversionListener.getSelectedBlock();
+                    conversionListener.getSelectedBlock(
+                            player
+                    );
 
             if (block == null) {
 

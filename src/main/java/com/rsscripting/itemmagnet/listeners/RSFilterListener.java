@@ -58,7 +58,9 @@ public class RSFilterListener
         }
 
         Block block =
-                conversionListener.getSelectedBlock();
+                conversionListener.getSelectedBlock(
+                        player
+                );
 
         if (block == null) {
 

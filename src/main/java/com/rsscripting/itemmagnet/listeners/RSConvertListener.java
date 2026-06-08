@@ -17,10 +17,15 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 public class RSConvertListener
         implements Listener {
 
-    private Block selectedBlock;
+    private final Map<UUID, Block> selectedBlocks =
+            new HashMap<>();
 
     @EventHandler
     public void onPlayerInteractBlock(
@@ -312,7 +317,10 @@ public class RSConvertListener
         |--------------------------------------------------------------------------
         */
 
-        selectedBlock = block;
+        selectedBlocks.put(
+                player.getUniqueId(),
+                block
+        );
 
         /*
 |--------------------------------------------------------------------------
@@ -383,12 +391,15 @@ public class RSConvertListener
     |--------------------------------------------------------------------------
     */
 
-    public Block getSelectedBlock() {
+    public Block getSelectedBlock(
+            Player player
+    ) {
 
-        return selectedBlock;
+        return selectedBlocks.get(
+                player.getUniqueId()
+        );
 
     }
-
     /*
     |--------------------------------------------------------------------------
     | Convert Back
@@ -400,7 +411,9 @@ public class RSConvertListener
     ) {
 
         Block block =
-                selectedBlock;
+                selectedBlocks.get(
+                        player.getUniqueId()
+                );
 
         if (block == null) {
 

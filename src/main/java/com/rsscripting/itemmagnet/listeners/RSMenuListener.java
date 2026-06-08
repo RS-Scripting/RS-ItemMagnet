@@ -59,7 +59,9 @@ public class RSMenuListener
             if (event.getRawSlot() == 4) {
 
                 Block block =
-                        conversionListener.getSelectedBlock();
+                        conversionListener.getSelectedBlock(
+                                player
+                        );
 
                 if (block == null){
 
@@ -113,7 +115,9 @@ public class RSMenuListener
             }
 
             Block block =
-                    conversionListener.getSelectedBlock();
+                    conversionListener.getSelectedBlock(
+                            player
+                    );
 
             if (block == null) {
 
