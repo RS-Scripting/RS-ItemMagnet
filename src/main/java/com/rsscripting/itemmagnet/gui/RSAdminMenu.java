@@ -101,22 +101,31 @@ public class RSAdminMenu {
 
                         List.of(
 
-                                "§7Installed: §f"
+                                "§7Current Version: §f"
                                         + VersionUtils.getVersion(),
 
-                                "",
-
-                                "§7Status: §f"
-                                        + GitHubUpdateChecker.getUpdateStatus(),
-
-                                "",
-
-                                "§7Latest: §f"
+                                "§7Latest Version: §f"
                                         + (
                                         GitHubUpdateChecker.getLatestVersion()
                                                 == null
                                                 ? "Unknown"
                                                 : GitHubUpdateChecker.getLatestVersion()
+                                ),
+
+                                "",
+
+                                (
+                                        GitHubUpdateChecker.getLatestVersion() == null
+                                                || GitHubUpdateChecker.getLatestVersion()
+                                                .equalsIgnoreCase("Unknown")
+                                )
+                                        ? "§cStatus: Unable To Check"
+                                        : (
+                                        !VersionUtils.getVersion().equalsIgnoreCase(
+                                                GitHubUpdateChecker.getLatestVersion()
+                                        )
+                                        ? "§aStatus: Update Available"
+                                        : "§aStatus: Up To Date"
                                 )
 
                         )

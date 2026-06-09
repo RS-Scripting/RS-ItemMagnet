@@ -7,7 +7,7 @@
 
     <groupId>com.rsscripting</groupId>
     <artifactId>RS-ItemMagnet</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

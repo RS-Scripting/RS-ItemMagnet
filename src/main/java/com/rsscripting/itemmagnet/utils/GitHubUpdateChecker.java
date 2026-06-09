@@ -89,7 +89,13 @@ public class GitHubUpdateChecker {
                         |--------------------------------------------------------------------------
                         */
 
-                        if (!latestVersion.equalsIgnoreCase(
+                        if (latestVersion == null) {
+
+                            updateStatus =
+                                    "Unable To Check";
+
+                        }
+                        else if (!latestVersion.equalsIgnoreCase(
                                 currentVersion
                         )) {
 
@@ -133,13 +139,15 @@ public class GitHubUpdateChecker {
 
                     catch (Exception exception) {
 
+                        latestVersion = null;
+
                         updateStatus =
                                 "Unable To Check";
 
                         Bukkit.getConsoleSender().sendMessage(
 
                                 RSConstants.PREFIX
-                                        + "Failed to check for updates."
+                                        + "Unable to check for updates."
 
                         );
 
