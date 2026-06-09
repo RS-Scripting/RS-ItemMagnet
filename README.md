@@ -133,15 +133,6 @@ Together these plugins create a complete automated resource collection and logis
 
 ---
 
-# Commands
-
-| Command       | Description                  |
-| ------------- | ---------------------------- |
-| `/rsim`       | Open the ItemMagnet menu     |
-| `/rsim admin` | Open administrative controls |
-
----
-
 # Permissions
 
 | Permission            | Description               |
