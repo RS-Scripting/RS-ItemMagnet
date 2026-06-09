@@ -125,7 +125,7 @@ Together these plugins create a complete automated resource collection and logis
 
 ### Filter Menu
 
-<img width="349" height="131" alt="1f0d7b5f-5155-4af4-88f4-cd20e4ad9ca6" src="https://github.com/user-attachments/assets/cef2d0bf-f4f3-4d93-b33e-5f94553deb06" />
+<img width="349" height="267" alt="cde741b8-51ce-4915-9919-1442c2fb1020" src="https://github.com/user-attachments/assets/8169f346-91f3-403b-bc2e-0cb82c40c0d8" />
 
 ### Radius Configuration
 
