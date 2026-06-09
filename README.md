@@ -120,19 +120,16 @@ Together these plugins create a complete automated resource collection and logis
 
 ### Main Menu
 
-*Coming Soon*
+<img width="346" height="131" alt="27b8e481-1df0-465c-8fa1-2530636fa19f" src="https://github.com/user-attachments/assets/7446e87e-a77e-466f-8177-98c18b572011" />
+>
 
 ### Filter Menu
 
-*Coming Soon*
+<img width="349" height="131" alt="1f0d7b5f-5155-4af4-88f4-cd20e4ad9ca6" src="https://github.com/user-attachments/assets/cef2d0bf-f4f3-4d93-b33e-5f94553deb06" />
 
 ### Radius Configuration
 
-*Coming Soon*
-
-### Item Collection
-
-*Coming Soon*
+<img width="349" height="131" alt="1f0d7b5f-5155-4af4-88f4-cd20e4ad9ca6" src="https://github.com/user-attachments/assets/9c2583a1-15b5-4dc5-a9f6-af627e16f790" />
 
 ---
 
