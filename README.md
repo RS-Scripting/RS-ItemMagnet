@@ -42,6 +42,20 @@ RS-ItemMagnet replaces those systems with a clean, configurable, database-backed
 
 ---
 
+## Documentation
+
+See the documentation inside the docs folder:
+
+- [Installation](docs/Installation.md)
+- [Creating Your First ItemMagnet](docs/Creating-Your-First-ItemMagnet.md)
+- [Filters](docs/Filters.md)
+- [Radius Settings](docs/Radius-Settings.md)
+- [Pause and Resume](docs/Pause-and-Resume.md)
+- [Admin Guide](docs/Admin-Guide.md)
+- [Troubleshooting](docs/Troubleshooting.md)
+- [Storage and Persistence](docs/Storage-and-Persistence.md)
+- [Changelog](docs/Changelog.md)
+
 # Features
 
 ### Automated Item Collection
