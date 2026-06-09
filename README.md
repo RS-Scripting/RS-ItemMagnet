@@ -3,7 +3,6 @@
   <p align="center">
     Automated Item Collection for Modern Minecraft Servers
   </p>
-</p>
 
 <p align="center">
 
