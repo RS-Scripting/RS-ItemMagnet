@@ -109,16 +109,16 @@ public class GitHubUpdateChecker {
                             updateStatus =
                                     "Update Available";
 
-                            Bukkit.getConsoleSender().sendMessage(
+                            RSItemMagnet.getInstance()
+                                    .getLogger()
+                                    .warning(
 
-                                    RSConstants.PREFIX
-                                            + "Update available: "
-                                            + latestVersion
-                                            + " (Current: "
-                                            + currentVersion
-                                            + ")"
+                                            "Update available! Current: "
+                                                    + currentVersion
+                                                    + " Latest: "
+                                                    + latestVersion
 
-                            );
+                                    );
 
                         }
 
