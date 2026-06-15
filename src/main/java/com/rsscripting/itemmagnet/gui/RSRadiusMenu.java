@@ -97,20 +97,30 @@ public class RSRadiusMenu {
         |--------------------------------------------------------------------------
         */
 
-        menu.setItem(
-                10,
+        ItemStack minusTen =
                 RSMenuUtils.createMenuItem(
                         Material.RED_WOOL,
                         "§c-10"
-                )
-        );
+                );
+
+        minusTen.setAmount(10);
 
         menu.setItem(
-                11,
+                10,
+                minusTen
+        );
+
+        ItemStack minusFive =
                 RSMenuUtils.createMenuItem(
                         Material.RED_WOOL,
                         "§c-5"
-                )
+                );
+
+        minusFive.setAmount(5);
+
+        menu.setItem(
+                11,
+                minusFive
         );
 
         menu.setItem(
@@ -127,28 +137,43 @@ public class RSRadiusMenu {
         |--------------------------------------------------------------------------
         */
 
-        menu.setItem(
-                14,
+        ItemStack plusOne =
                 RSMenuUtils.createMenuItem(
                         Material.GREEN_WOOL,
                         "§a+1"
-                )
-        );
+                );
+
+        plusOne.setAmount(1);
 
         menu.setItem(
-                15,
+                14,
+                plusOne
+        );
+
+        ItemStack plusFive =
                 RSMenuUtils.createMenuItem(
                         Material.GREEN_WOOL,
                         "§a+5"
-                )
-        );
+                );
+
+        plusFive.setAmount(5);
 
         menu.setItem(
-                16,
+                15,
+                plusFive
+        );
+
+        ItemStack plusTen =
                 RSMenuUtils.createMenuItem(
                         Material.GREEN_WOOL,
                         "§a+10"
-                )
+                );
+
+        plusTen.setAmount(10);
+
+        menu.setItem(
+                16,
+                plusTen
         );
 
         player.openInventory(menu);

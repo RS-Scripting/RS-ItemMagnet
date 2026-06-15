@@ -17,6 +17,7 @@ public class GitHubUpdateChecker {
     */
 
     private static String latestVersion = null;
+    private static boolean updateAvailable = false;
 
     private static String updateStatus =
             "Checking...";
@@ -102,6 +103,9 @@ public class GitHubUpdateChecker {
                                 ) > 0
                         ) {
 
+                            updateAvailable =
+                                    true;
+
                             updateStatus =
                                     "Update Available";
 
@@ -125,6 +129,9 @@ public class GitHubUpdateChecker {
                         */
 
                         else {
+
+                            updateAvailable =
+                                    false;
 
                             updateStatus =
                                     "Up To Date";
@@ -183,6 +190,30 @@ public class GitHubUpdateChecker {
     public static String getUpdateStatus() {
 
         return updateStatus;
+
+    }
+
+/*
+|--------------------------------------------------------------------------
+| UPDATE AVAILABLE
+|--------------------------------------------------------------------------
+*/
+
+    public static boolean isUpdateAvailable() {
+
+        return updateAvailable;
+
+    }
+
+/*
+|--------------------------------------------------------------------------
+| GET LATEST VERSION FOUND
+|--------------------------------------------------------------------------
+*/
+
+    public static String getLatestVersionFound() {
+
+        return latestVersion;
 
     }
 

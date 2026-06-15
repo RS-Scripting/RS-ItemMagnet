@@ -119,6 +119,13 @@ public class RSItemMagnet
                         this
                 );
 
+        getServer()
+                .getPluginManager()
+                .registerEvents(
+                        new RSUpdateNotificationListener(),
+                        this
+                );
+
         /*
         |--------------------------------------------------------------------------
         | COMMANDS
