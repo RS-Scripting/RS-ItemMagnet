@@ -91,7 +91,9 @@ public class RSConvertListener
             }
 
             double maxDistance =
-                    ConfigManager.getDefaultRadius();
+                    MachineManager.getRadius(
+                            targetAssignmentMachine
+                    );
 
             if (targetAssignmentMachine
                     .getLocation()
@@ -180,9 +182,10 @@ public class RSConvertListener
 
             Block lodestone =
                     pendingConversion.getLodestone();
-
             double maxDistance =
-                    ConfigManager.getDefaultRadius();
+                    MachineManager.getRadius(
+                            lodestone
+                    );
 
             if (!lodestone.getWorld().equals(
                     block.getWorld()
