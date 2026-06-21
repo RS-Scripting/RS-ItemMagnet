@@ -55,104 +55,102 @@ public class RSConvertListener
                                 player
                         );
 
-        if (pendingAssignment == null) {
+        if (pendingAssignment != null) {
 
-            return;
+            if (pendingAssignment.isExpired()) {
 
-        }
+                RSConversionManager.removePendingTargetAssignment(
+                        player
+                );
 
-        if (pendingAssignment.isExpired()) {
-
-            RSConversionManager.removePendingTargetAssignment(
-                    player
-            );
-
-            player.sendMessage(
-                    RSConstants.PREFIX
-                            + "Target assignment expired."
-            );
-
-            return;
-
-        }
-
-        Block targetAssignmentMachine =
-                pendingAssignment.getMachine();
-        if (targetAssignmentMachine != null) {
-
-            event.setCancelled(true);
-
-            Material type =
-                    block.getType();
-
-            if (
-                    type != Material.HOPPER
-                            &&
-                            type != Material.CHEST
-                            &&
-                            type != Material.BARREL
-            ) {
-
-                RSMessageUtils.error(
-                        player,
-                        "Please select a Hopper, Chest, or Barrel."
+                player.sendMessage(
+                        RSConstants.PREFIX
+                                + "Target assignment expired."
                 );
 
                 return;
 
             }
 
-            if (!targetAssignmentMachine.getWorld().equals(
-                    block.getWorld()
-            )) {
+            Block targetAssignmentMachine =
+                    pendingAssignment.getMachine();
 
-                RSMessageUtils.error(
-                        player,
-                        "Target container must be in the same world."
-                );
+            if (targetAssignmentMachine != null) {
 
-                return;
+                event.setCancelled(true);
 
-            }
+                Material type =
+                        block.getType();
 
-            double maxDistance =
-                    MachineManager.getRadius(
-                            targetAssignmentMachine
+                if (
+                        type != Material.HOPPER
+                                &&
+                                type != Material.CHEST
+                                &&
+                                type != Material.BARREL
+                ) {
+
+                    RSMessageUtils.error(
+                            player,
+                            "Please select a Hopper, Chest, or Barrel."
                     );
 
-            if (targetAssignmentMachine
-                    .getLocation()
-                    .distance(
-                            block.getLocation()
-                    ) > maxDistance) {
+                    return;
 
-                RSMessageUtils.error(
+                }
+
+                if (!targetAssignmentMachine.getWorld().equals(
+                        block.getWorld()
+                )) {
+
+                    RSMessageUtils.error(
+                            player,
+                            "Target container must be in the same world."
+                    );
+
+                    return;
+
+                }
+
+                double maxDistance =
+                        MachineManager.getRadius(
+                                targetAssignmentMachine
+                        );
+
+                if (targetAssignmentMachine
+                        .getLocation()
+                        .distance(
+                                block.getLocation()
+                        ) > maxDistance) {
+
+                    RSMessageUtils.error(
+                            player,
+                            "Target container must be within "
+                                    + maxDistance
+                                    + " blocks."
+                    );
+
+                    return;
+
+                }
+
+                MachineManager.setTargetContainer(
+                        targetAssignmentMachine,
+                        block
+                );
+
+                RSConversionManager.removePendingTargetAssignment(
+                        player
+                );
+
+                RSMessageUtils.success(
                         player,
-                        "Target container must be within "
-                                + maxDistance
-                                + " blocks."
+                        "Target container updated."
                 );
 
                 return;
 
             }
-
-            MachineManager.setTargetContainer(
-                    targetAssignmentMachine,
-                    block
-            );
-
-            RSConversionManager.removePendingTargetAssignment(
-                    player
-            );
-
-            RSMessageUtils.success(
-                    player,
-                    "Target container updated."
-            );
-
-            return;
-
         }
 
 /*
@@ -207,10 +205,9 @@ public class RSConvertListener
 
             Block lodestone =
                     pendingConversion.getLodestone();
+
             double maxDistance =
-                    MachineManager.getRadius(
-                            lodestone
-                    );
+                    ConfigManager.getDefaultRadius();
 
             if (!lodestone.getWorld().equals(
                     block.getWorld()
