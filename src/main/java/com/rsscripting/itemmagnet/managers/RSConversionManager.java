@@ -15,7 +15,7 @@ public class RSConversionManager {
             pendingConversions =
             new HashMap<>();
 
-    private static final Map<UUID, Block>
+    private static final Map<UUID, PendingTargetAssignment>
             pendingTargetAssignments =
             new HashMap<>();
 
@@ -113,14 +113,28 @@ public class RSConversionManager {
             Block lodestone
     ) {
 
+        long timeoutMillis =
+                ConfigManager.getConversionTimeout()
+                        * 1000L;
+
         pendingTargetAssignments.put(
+
                 player.getUniqueId(),
-                lodestone
+
+                new PendingTargetAssignment(
+
+                        lodestone,
+
+                        System.currentTimeMillis()
+                                + timeoutMillis
+
+                )
+
         );
 
     }
 
-    public static Block getPendingTargetAssignment(
+    public static PendingTargetAssignment getPendingTargetAssignment(
             Player player
     ) {
 

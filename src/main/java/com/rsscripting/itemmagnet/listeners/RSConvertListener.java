@@ -3,6 +3,7 @@ package com.rsscripting.itemmagnet.listeners;
 import com.rsscripting.itemmagnet.gui.RSConversionMenu;
 import com.rsscripting.itemmagnet.gui.RSMainMenu;
 import com.rsscripting.itemmagnet.managers.MachineManager;
+import com.rsscripting.itemmagnet.managers.PendingTargetAssignment;
 import com.rsscripting.itemmagnet.utils.RSConstants;
 import com.rsscripting.itemmagnet.utils.RSMessageUtils;
 import com.rsscripting.itemmagnet.config.ConfigManager;
@@ -48,11 +49,35 @@ public class RSConvertListener
 |--------------------------------------------------------------------------
 */
 
-        Block targetAssignmentMachine =
-                RSConversionManager.getPendingTargetAssignment(
-                        player
-                );
+        PendingTargetAssignment pendingAssignment =
+                RSConversionManager
+                        .getPendingTargetAssignment(
+                                player
+                        );
 
+        if (pendingAssignment == null) {
+
+            return;
+
+        }
+
+        if (pendingAssignment.isExpired()) {
+
+            RSConversionManager.removePendingTargetAssignment(
+                    player
+            );
+
+            player.sendMessage(
+                    RSConstants.PREFIX
+                            + "Target assignment expired."
+            );
+
+            return;
+
+        }
+
+        Block targetAssignmentMachine =
+                pendingAssignment.getMachine();
         if (targetAssignmentMachine != null) {
 
             event.setCancelled(true);
